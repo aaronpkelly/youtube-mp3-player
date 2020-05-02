@@ -1,0 +1,12 @@
+image: alpine/edge
+secrets:
+  - 1b3fe3d9-ee86-4c7e-bd35-d0c87b6e12a9
+sources:
+  - git+ssh://git@git.sr.ht/~aaronkelly/youtube-mp3-player
+tasks:
+- push-to-github: |-
+    cd rust
+    git checkout master
+    git remote set-url origin git@github.com:aaronpkelly/rust.git
+    echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    git push
