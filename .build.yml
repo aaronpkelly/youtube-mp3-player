@@ -5,8 +5,8 @@ sources:
   - git+ssh://git@git.sr.ht/~aaronkelly/youtube-mp3-player
 tasks:
 - push-to-github: |-
-    cd rust
+    cd youtube-mp3-player
     git checkout master
-    git remote set-url origin git@github.com:aaronpkelly/rust.git
+    git remote set-url origin git@github.com:aaronpkelly/youtube-mp3-player
     echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     git push
