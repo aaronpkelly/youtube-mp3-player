@@ -7,8 +7,7 @@ Search and play songs from your terminal!
 Run this command, passing your search query in single quotes at the end:
 
 ```
-docker run \
-	--rm \
+docker run --rm \
 	--device=/dev/snd \
 	aaronkelly/youtube-mp3-player \
 	'tesseract - april'
