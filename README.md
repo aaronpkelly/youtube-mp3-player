@@ -4,10 +4,10 @@ Search and play songs from your terminal!
 
 # Usage
 
-Run this command, pass your search query in single quotes:
+Run this command, passing your search query in single quotes at the end:
 
 ```
-docker run --rm -t --device=/dev/snd aaronkelly/youtube-mp3-player 'beach boys rhonda'
+docker run --rm -t --device=/dev/snd aaronkelly/youtube-mp3-player 'beach boys - help me rhonda'
 ```
 
 # Requirements
