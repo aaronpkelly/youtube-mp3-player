@@ -2,25 +2,31 @@
 
 Search and play songs from your terminal!
 
+# Requirements
+
+- linux
+- docker
+
 # Usage
 
-Run this command, passing your search query in single quotes at the end:
+You can just use the `./runMe.sh` script:
+
+```
+./runMe.sh Beach Boys - California Girls
+```
+
+The above script is just a wrapper around this command:
 
 ```
 docker run --rm \
 	--device=/dev/snd \
 	aaronkelly/youtube-mp3-player \
-	'tesseract - april'
+	'Beach Boys - California Girls'
 ```
-
-# Requirements
-
-- docker
-- linux
 
 # How it works
 
-I use a collection of well-known tools to search for, download, convert, and play a song:
+I use a collection of tools to search for, download, convert, and play a song:
 
 - youtube-dl
 - ffmpeg
@@ -31,5 +37,3 @@ The linux host's sound device (/dev/snd) is then mounted into the container, all
 # Known issues
 
 I can't seem to stop the container using an interrupt once the music starts playing. Oh well!
-
-

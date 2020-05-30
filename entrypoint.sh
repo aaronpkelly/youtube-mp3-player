@@ -1,8 +1,8 @@
 #! /bin/ash
 
-SONG=$1
+SONG=$@
 
-youtube-dl ytsearch1:"$1" \
+youtube-dl ytsearch1:"$SONG" \
 	--extract-audio \
 	--audio-format mp3
 
