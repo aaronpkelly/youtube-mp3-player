@@ -4,17 +4,13 @@ RUN apk update && \
 	curl \
 	ffmpeg \
 	mplayer \
-	python \
-	youtube-dl
+	python
 COPY . /app
 WORKDIR /app
 
 # even when downloading the latest youtube-dl...
-# RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
-	# chmod a+rx /usr/local/bin/youtube-dl && \
-
-# I've found i've still needed to update it for it to work properly! (video not found before, but after updating, found)
-youtube-dl -U
-
+RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
+	chmod a+rx /usr/local/bin/youtube-dl && \
+	youtube-dl -U
 
 ENTRYPOINT ["./entrypoint.sh"]
