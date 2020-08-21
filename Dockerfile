@@ -4,12 +4,13 @@ RUN apk update && \
 	curl \
 	ffmpeg \
 	mplayer \
-	python
+	python3
 COPY . /app
 WORKDIR /app
 
-# even when downloading the latest youtube-dl...
-RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
+
+RUN ln -sn /usr/bin/python3 /usr/bin/python && \
+	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
 	chmod a+rx /usr/local/bin/youtube-dl && \
 	youtube-dl -U
 
