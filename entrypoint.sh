@@ -1,9 +1,10 @@
 #! /bin/ash
+set -eux
 
 SONG=$@
 
 youtube-dl ytsearch1:"$SONG" \
 	--extract-audio \
-	--audio-format mp3
+	--audio-format opus
 
-mpg123 *.mp3
+mplayer *.opus

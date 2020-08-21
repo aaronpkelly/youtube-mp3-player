@@ -3,7 +3,7 @@ RUN apk update && \
 	apk add \
 	curl \
 	ffmpeg \
-	mpg123 \
+	mplayer \
 	python \
 	youtube-dl
 COPY . /app
