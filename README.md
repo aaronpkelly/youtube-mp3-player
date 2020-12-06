@@ -7,7 +7,7 @@ docker, linux
 Run this command
 
 ```
-docker run --device=/dev/snd --rm --name youtube-mp3-player -it aaronkelly/youtube-mp3-player 'beach boys california girls'
+docker run --device=/dev/snd --privileged --rm --name youtube-mp3-player -it aaronkelly/youtube-mp3-player 'beach boys california girls'
 ```
 
 See the .aliases file for more docker commands
