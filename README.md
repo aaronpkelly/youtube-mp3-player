@@ -1,20 +1,18 @@
-# About
+# requirements
 
-Search and play songs from your terminal!
+docker, linux
 
-# Usage
+# getting started
 
-You need Linux with Docker installed in order to use this tool.
-
-Source the `.aliases` file, then run the container with `r`, putting your search query in quotes:
+Run this command
 
 ```
-r 'beach boys california girls'
+docker run --device=/dev/snd --rm --name youtube-mp3-player -it aaronkelly/youtube-mp3-player 'beach boys california girls'
 ```
 
-You can also use `b` to build the image locally.
+See the .aliases file for more docker commands
 
-# How it works
+# how it works
 
 I use a collection of tools to search for, download, convert, and play a song:
 
@@ -24,6 +22,12 @@ I use a collection of tools to search for, download, convert, and play a song:
 
 The linux host's sound device (/dev/snd) is then mounted into the container, allowing it to play music!
 
-# Known issues
+# see also
 
-I can't seem to stop the container using an interrupt once the music starts playing. Oh well!
+project home: https://sr.ht/~aaronkelly/youtube-mp3-player
+
+git repo: https://git.sr.ht/~aaronkelly/youtube-mp3-player
+
+issue tracker: https://todo.sr.ht/~aaronkelly/youtube-mp3-player
+
+mailing lists: https://sr.ht/~aaronkelly/youtube-mp3-player/lists
